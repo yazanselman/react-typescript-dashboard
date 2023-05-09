@@ -1,9 +1,17 @@
-import React from 'react';
-import Home from './home/Home';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ExcelImport from "./ExcelImport";
+import Home from "./home/Home";
 
 function App() {
   return (
-     <Home/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<ExcelImport />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

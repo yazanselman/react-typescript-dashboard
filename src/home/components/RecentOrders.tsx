@@ -41,50 +41,48 @@ const RecentOrders: FC = () => {
   return (
     <Card sx={{ padding: "2rem" }}>
       <H5>Recent Orders</H5>
+      <button>Button</button>
+      <Table>
+        <TableHead sx={{ borderBottom: "1.5px solid", borderColor: "divider" }}>
+          <TableRow>
+            <HeadTableCell>Tracking No</HeadTableCell>
+            <HeadTableCell>Product Name</HeadTableCell>
+            <HeadTableCell>Price</HeadTableCell>
+            <HeadTableCell>Total Order</HeadTableCell>
+            <HeadTableCell>Total amount</HeadTableCell>
+          </TableRow>
+        </TableHead>
 
-        <Table>
-          <TableHead
-            sx={{ borderBottom: "1.5px solid", borderColor: "divider" }}
-          >
-            <TableRow>
-              <HeadTableCell>Tracking No</HeadTableCell>
-              <HeadTableCell>Product Name</HeadTableCell>
-              <HeadTableCell>Price</HeadTableCell>
-              <HeadTableCell>Total Order</HeadTableCell>
-              <HeadTableCell>Total amount</HeadTableCell>
+        <TableBody>
+          {orderList.map((item, index) => (
+            <TableRow key={index}>
+              <BodyTableCell>{item.orderNo}</BodyTableCell>
+              <BodyTableCell>
+                <Box display="flex" alignItems="center">
+                  <img src={item.image} alt="product title" width="40px" />
+                  <Small ml="1rem">{item.name}</Small>
+                </Box>
+              </BodyTableCell>
+              <BodyTableCell>${item.price}</BodyTableCell>
+              <BodyTableCell>
+                <Box
+                  sx={{
+                    backgroundColor: "secondary.200",
+                    borderRadius: 11,
+                    maxWidth: 55,
+                    padding: "0.3rem",
+                    textAlign: "center",
+                    color: "secondary.400",
+                  }}
+                >
+                  {item.totalOrder}
+                </Box>
+              </BodyTableCell>
+              <BodyTableCell>{item.totalAmount}</BodyTableCell>
             </TableRow>
-          </TableHead>
-
-          <TableBody>
-            {orderList.map((item, index) => (
-              <TableRow key={index}>
-                <BodyTableCell>{item.orderNo}</BodyTableCell>
-                <BodyTableCell>
-                  <Box display="flex" alignItems="center">
-                    <img src={item.image} alt="product title" width="40px" />
-                    <Small ml="1rem">{item.name}</Small>
-                  </Box>
-                </BodyTableCell>
-                <BodyTableCell>${item.price}</BodyTableCell>
-                <BodyTableCell>
-                  <Box
-                    sx={{
-                      backgroundColor: "secondary.200",
-                      borderRadius: 11,
-                      maxWidth: 55,
-                      padding: "0.3rem",
-                      textAlign: "center",
-                      color: "secondary.400",
-                    }}
-                  >
-                    {item.totalOrder}
-                  </Box>
-                </BodyTableCell>
-                <BodyTableCell>{item.totalAmount}</BodyTableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+          ))}
+        </TableBody>
+      </Table>
     </Card>
   );
 };
