@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { H5, Small } from "./Typography";
 import { FC } from "react";
+import { log } from "console";
 
 const commonCSS = {
   minWidth: 120,
@@ -41,7 +42,7 @@ const RecentOrders: FC = () => {
   return (
     <Card sx={{ padding: "2rem" }}>
       <H5>Recent Orders</H5>
-      <button>Button</button>
+      <button onClick={() => console.log("deneme")}>Button</button>
       <Table>
         <TableHead sx={{ borderBottom: "1.5px solid", borderColor: "divider" }}>
           <TableRow>
