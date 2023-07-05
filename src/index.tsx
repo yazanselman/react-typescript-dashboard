@@ -4,14 +4,16 @@ import App from "./App";
 import ExcelImport from "./ExcelImport";
 import Home from "./home/Home";
 import ExcelExport from "./home/ExcelExport";
+import Pricing from "./pricing/Pricing";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ExcelImport />
+    {/* <ExcelImport />
     <Home />
-    <ExcelExport />
+    <ExcelExport /> */}
+    <Pricing />
   </React.StrictMode>
 );
