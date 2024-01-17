@@ -5,6 +5,7 @@ import ExcelImport from "./ExcelImport";
 import Home from "./home/Home";
 import ExcelExport from "./home/ExcelExport";
 import Pricing from "./pricing/Pricing";
+import MultiEmailInput from "./MultiEmailInput";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +14,8 @@ root.render(
   <React.StrictMode>
     {/* <ExcelImport />
     <Home />
-    <ExcelExport /> */}
-    <Pricing />
+    <ExcelExport /> 
+    <Pricing /> */}
+    <MultiEmailInput />
   </React.StrictMode>
 );
